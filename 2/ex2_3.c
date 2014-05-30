@@ -1,12 +1,29 @@
+#include <stdio.h>
 
+#define MAX 50
 enum boolean { NO, YES };
+
+int htoi(char s[]);
+
+main()
+{
+	char input[MAX];
+	printf("enter the hex number: ");
+	scanf("%s", input);
+
+	int p = htoi(input);
+	printf("%d\n", p);
+
+	return 0;
+		
+}	
 
 int htoi(char s[])
 {
 	int i, hexdigit, inhex, n;
 	i = 0;
 
-	if (s[i] == '\0'){
+	if (s[i] == '0'){
 		++i;
 		if (s[i] == 'x' || s[i] == 'X')
 			++i;
